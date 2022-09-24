@@ -1,5 +1,6 @@
 import {DataSource} from "typeorm";
 import 'reflect-metadata'
+import { Candidate } from "../entities/Candidate";
 
 const PostgresDataSource = new DataSource({
     type: 'postgres',
@@ -8,7 +9,8 @@ const PostgresDataSource = new DataSource({
     username: 'postgres',
     password: '123',
     database: 'poc',
-    entities: ["../entities/*.ts"]
+    entities: [Candidate],
+    synchronize: true
 });
 
 export { PostgresDataSource };

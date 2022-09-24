@@ -1,7 +1,7 @@
-import {Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn} from "typeorm";
+import {BaseEntity, Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn} from "typeorm";
 
-@Entity()
-class Candidate {
+@Entity('candidates')
+class Candidate extends BaseEntity {
 
     @PrimaryGeneratedColumn()
     id: number;
@@ -9,7 +9,7 @@ class Candidate {
     @Column()
     name: string;
 
-    @Column()
+    @Column('text')
     bio: string;
 
     @Column()
