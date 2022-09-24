@@ -4,6 +4,7 @@ import express from 'express';
 
 PostgresDataSource.initialize()
     .then(() => {
+
         const app = express();
 
         app.use(express.json());
@@ -13,5 +14,4 @@ PostgresDataSource.initialize()
         console.log("DataSouce has been initialized.")
     })
     .catch(err => console.log("Error on DataSouce initialization.", err));
-
 

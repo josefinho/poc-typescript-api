@@ -1,14 +1,13 @@
 import {DataSource} from "typeorm";
-import "dotenv/config";
-import "reflect-metadata";
+import 'reflect-metadata'
 
 const PostgresDataSource = new DataSource({
     type: 'postgres',
-    host: process.env.DB_HOST,
-    port: Number(process.env.DB_PORT),
-    username: process.env.DB_USER,
-    password: process.env.DB_PASS,
-    database: process.env.DB_NAME,
+    host: 'localhost',
+    port: 5432,
+    username: 'postgres',
+    password: '123',
+    database: 'poc',
     entities: ["../entities/*.ts"]
 });
 
