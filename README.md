@@ -14,13 +14,17 @@ graphical management of databases.
 - [ ] Implement first using Data Mapper Patterns (TypeORM)
  - [ ] Refactor to Repository Pattern latter
 - [ ] Implement error handling techniques
+- [ ] Learn and implement migrations
 
 #### Functional Requirements
 
 - [ ] Candidates CRUD
- - [ ] Tests
+ - [ ] Unit Tests
+ - [ ] JWT Authentication
 - [ ] jobs CRUD
- - [ ] Tests
+ - [ ] Unit Tests
+ - [ ] Filter by string/terms
+ - [ ] Filter by companies
 - [ ] job_candidates CRUD
- - [ ] Tests
+ - [ ] Unit Tests
 - [ ] companies CRUD
