@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { Candidate } from "../entities/Candidate";
+import { Request, Response } from "express";
 
 const candidatesRoute = Router();
 
@@ -7,7 +8,7 @@ candidatesRoute.get('/', (req, res) => {
     return res.status(200).json({msg: "Aewhoooo"});
 })
 
-candidatesRoute.post('/', async (req, res) => {
+candidatesRoute.post('/', async (req: Request, res: Response) => {
     const { 
         name, 
         bio, 
