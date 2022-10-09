@@ -10,8 +10,8 @@ graphical management of databases.
 
 - [X] Define ER model
 - [ ] Define API routes
-- [ ] Implement first using Data Mapper Patterns (TypeORM)
- - [ ] Refactor to Repository Pattern latter
+- [ ] Implement first using Active Record Pattern (TypeORM)
+ - [ ] Refactor to Data Mapper (Repository) Pattern latter
 - [ ] Implement error handling techniques
 - [ ] Learn and implement migrations
 - [ ] Unitary tests
@@ -19,21 +19,23 @@ graphical management of databases.
 
 #### Functional Requirements
 
-- [ ] Candidates CRUD
- - [X] POST
- - [ ] GET
- - [ ] PUT
- - [ ] DELETE
- - [ ] JWT Authentication
- - [ ] Candidate apply to a job
+- [ ] Candidates Module
+ - [X] POST /cadidates - Creates a candidate
+ - [ ] GET /candidates/{id} - Get candidate by id
+ - [ ] PUT /candidates/{id} - Update candidate by id
+ - [ ] DELETE /candidates/{id} - Delete candidate by id
+ - [ ] Registration and Login with JWT Authentication
+ - [ ] GET /candidates/{id}/jobs/{id} - Apply to a job
 
-- [ ] jobs CRUD
- - [ ] POST
- - [ ] GET
- - [ ] PUT
- - [ ] DELETE
- - [ ] Filter by string/terms
+- [ ] Jobs Module
+ - [ ] POST /jobs - Creates a Job
+ - [ ] GET /jobs/{id} - Get job by id
+ - [ ] PUT /jobs/{id} - Update job by id
+ - [ ] DELETE /jobs/{id} - Delete job by id
+ - [ ] POST /jobs/{id}/candidates/{id} - apply to a job
+ - [ ] GET /jobs?str={str} - Get jobs in which 'title' or 'description' matches the string in query string
  - [ ] Filter by companies
+ - [ ] GET /jobs/{id}/candidates - Get candidates that applied to a job
 
 **BR 1:** On jobs creation, each one must be associated to an already registered company.
 
@@ -49,3 +51,7 @@ graphical management of databases.
  - [ ] PUT
  - [ ] DELETE
  
+
+#### Other possibles Requirements
+
+- Candidate receives and e-mail when his application is accepted or denied
