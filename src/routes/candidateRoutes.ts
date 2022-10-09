@@ -1,5 +1,5 @@
 import { Router } from "express";
-import {CandidateController} from "../controllers/Candidate.controller";
+import {CandidateController} from "../controllers/CandidateController";
 
 const candidatesRoute = Router();
 const candidateController = new CandidateController();
