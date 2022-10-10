@@ -20,7 +20,7 @@ graphical management of databases.
 #### Functional Requirements
 
 - [ ] Candidates Module
- - [X] POST /cadidates - Creates a candidate
+ - [X] POST /cadidates - Creates one candidate
  - [ ] GET /candidates/{id} - Get candidate by id
  - [ ] PUT /candidates/{id} - Update candidate by id
  - [ ] DELETE /candidates/{id} - Delete candidate by id
@@ -28,7 +28,7 @@ graphical management of databases.
  - [ ] GET /candidates/{id}/jobs/{id} - Apply to a job
 
 - [ ] Jobs Module
- - [ ] POST /jobs - Creates a Job
+ - [ ] POST /jobs - Creates one Job
  - [ ] GET /jobs/{id} - Get job by id
  - [ ] PUT /jobs/{id} - Update job by id
  - [ ] DELETE /jobs/{id} - Delete job by id

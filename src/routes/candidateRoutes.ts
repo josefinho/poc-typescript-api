@@ -1,10 +1,10 @@
 import { Router } from "express";
-import {CandidateController} from "../controllers/CandidateController";
+import { CandidateController } from "../controllers/CandidateController";
 
 const candidatesRoute = Router();
 const candidateController = new CandidateController();
 
-candidatesRoute.get('/', candidateController.get);
-candidatesRoute.post('/', candidateController.post);
+candidatesRoute.post('/', candidateController.createCandidate);
+candidatesRoute.get('/', candidateController.findOne);
 
 export { candidatesRoute };
