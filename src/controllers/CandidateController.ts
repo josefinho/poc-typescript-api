@@ -5,6 +5,9 @@ class CandidateController {
     public async createCandidate(req: Request, res: Response) {
         const {name, bio, email, phone, open_to_work} = req.body;
 
+
+        throw new Error('bruh');
+
         new CreateCandidateService()
             .execute({name, bio, email, phone, open_to_work});
 

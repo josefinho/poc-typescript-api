@@ -1,4 +1,5 @@
-import {BaseEntity, Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn} from "typeorm";
+import {BaseEntity, Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn} from "typeorm";
+import { Job_candidate } from "./Job_candidate";
 
 @Entity('candidates')
 class Candidate extends BaseEntity {
@@ -26,6 +27,10 @@ class Candidate extends BaseEntity {
 
     @UpdateDateColumn()
     updated_at: Date;
+
+    @OneToMany(() => Job_candidate, (jobCandidate) => jobCandidate.candidate)
+    jobCandidates: Job_candidate[];
+
 }
 
 export { Candidate };
