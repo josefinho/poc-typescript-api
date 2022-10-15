@@ -1,6 +1,8 @@
+import "express-async-errors";
 import { PostgresDataSource } from "./config/data-source";
-import express from 'express';
+import express, { Request, Response, NextFunction } from 'express';
 import { routes } from './routes/index';
+import { ApiError } from "./libs/ApiError";
 
 
 PostgresDataSource.initialize()
@@ -11,6 +13,22 @@ PostgresDataSource.initialize()
     app.use(express.json());
     app.use(express.urlencoded({extended: true}));
     app.use('/', routes);
+
+    app.use( (error: Error, req: Request, res: Response, next: NextFunction) => {
+
+        if (error instanceof ApiError) {
+            return res.status(error.statusCode).json({
+                statusCode: error.statusCode,
+                message: error.message
+            })
+        } else {
+            return res.status(500).json({
+                statusCode: 500,
+                message: "Internal Server Error"
+            })
+        }
+
+    } )
 
     app.listen(3000);
 

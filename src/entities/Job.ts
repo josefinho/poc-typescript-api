@@ -1,8 +1,8 @@
-import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { BaseEntity, Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 import { Job_candidate } from "./Job_candidate";
 
 @Entity('jobs')
-class Job {
+class Job extends BaseEntity {
 
     @PrimaryGeneratedColumn()
     id: number;
