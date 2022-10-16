@@ -1,8 +1,6 @@
 import {Request, Response} from 'express';
 import { CreateCandidateService } from '../services/CreateCandidateService';
-import { Job } from '../entities/Job';
-import { Candidate } from '../entities/Candidate';
-import { Job_candidate } from '../entities/Job_candidate';
+import { ApplyToAJobService } from '../services/ApplyToAJobService'
 
 class CandidateController {
     public async createCandidate(req: Request, res: Response) {
@@ -20,22 +18,12 @@ class CandidateController {
 
     public async applyToAJob(req: Request, res: Response) {
         const candidate_id = Number(req.params.candidate_id);
-        const candidate = await Candidate.findOneBy({id: candidate_id});
-
         const job_id = Number(req.params.job_id);
-        const job = await Job.findOneBy({id: job_id});
 
-        const job_candidate = new Job_candidate();
-
-        if(candidate !== null)
-            job_candidate.candidate = candidate;
-
-        if(job !== null)
-            job_candidate.job = job;
-
-        await job_candidate.save();
+        new ApplyToAJobService()
+            .execute({candidate_id, job_id});
         
-        res.status(200).json(job_candidate);
+        return res.sendStatus(201);
     }
 }
 
