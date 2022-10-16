@@ -21,6 +21,7 @@ class CreateJobService {
 
         const newJob = Job.create({ title, description, limit_date });
         await newJob.save();
+
     }
 }
 
