@@ -25,7 +25,7 @@ graphical management of databases.
  - [ ] PUT /candidates/{id} - Update candidate by id
  - [ ] DELETE /candidates/{id} - Delete candidate by id
  - [ ] Registration and Login with JWT Authentication
- - [ ] GET /candidates/{id}/jobs/{id} - Apply to a job
+ - [-] GET /candidates/{id}/jobs/{id} - Apply to a job. One candidate shouldn't apply more than one time to the same job.
 
 - [ ] Jobs Module
  - [X] POST /jobs - Creates one Job
