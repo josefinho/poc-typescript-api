@@ -28,7 +28,7 @@ graphical management of databases.
  - [ ] GET /candidates/{id}/jobs/{id} - Apply to a job
 
 - [ ] Jobs Module
- - [ ] POST /jobs - Creates one Job
+ - [X] POST /jobs - Creates one Job
  - [ ] GET /jobs/{id} - Get job by id
  - [ ] PUT /jobs/{id} - Update job by id
  - [ ] DELETE /jobs/{id} - Delete job by id
