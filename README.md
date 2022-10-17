@@ -20,7 +20,7 @@ graphical management of databases.
 #### Functional Requirements
 
 - [ ] Candidates Module
- - [X] POST /cadidates - Creates one candidate
+ - [-] POST /cadidates - Creates one candidate. Should not be possible to candidates have same e-mail adress.
  - [ ] GET /candidates/{id} - Get candidate by id
  - [ ] PUT /candidates/{id} - Update candidate by id
  - [ ] DELETE /candidates/{id} - Delete candidate by id
