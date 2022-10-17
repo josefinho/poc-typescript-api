@@ -1,4 +1,4 @@
-import { BaseEntity, CreateDateColumn, Entity, ManyToOne, PrimaryColumn, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { BaseEntity, Column, CreateDateColumn, Entity, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 import { Job } from './Job'
 import { Candidate } from "./Candidate";
 
@@ -13,11 +13,17 @@ class Job_candidate extends BaseEntity {
     @UpdateDateColumn()
     updated_at: Date;
 
-    @ManyToOne(() => Candidate, (candidate) => candidate.jobCandidates, {nullable: true})
+    @Column()
+    candidateId: number;
+
+    @Column()
+    jobId: number;
+
+    @ManyToOne(() => Candidate, (candidate) => candidate.jobCandidates)
     candidate: Candidate;
 
     @ManyToOne(() => Job, (job) => job.jobCandidates)
-    job: Job | null;
+    job: Job;
 
 }
 

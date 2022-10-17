@@ -20,7 +20,7 @@ class CandidateController {
         const candidate_id = Number(req.params.candidate_id);
         const job_id = Number(req.params.job_id);
 
-        new ApplyToAJobService()
+        await new ApplyToAJobService()
             .execute({candidate_id, job_id});
         
         return res.sendStatus(201);
