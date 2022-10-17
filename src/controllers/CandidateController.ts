@@ -1,8 +1,8 @@
 import {Request, Response} from 'express';
 import { CreateCandidateService } from '../services/CreateCandidateService';
 import { ApplyToAJobService } from '../services/ApplyToAJobService'
-import { Candidate } from '../entities/Candidate';
 import { ApiError } from '../libs/ApiError';
+import { FindCandidateService } from '../services/FindCandidateService';
 
 class CandidateController {
     public async createCandidate(req: Request, res: Response) {
@@ -15,11 +15,9 @@ class CandidateController {
     }
 
     public async findOne(req: Request, res: Response) {
-        const { candidate_id } = req.body;
-        const candidate = await Candidate.findOneBy({id: candidate_id});
-
-        if(candidate === null)
-            throw new ApiError("Candidate not found.", 404);
+        const candidate_id = Number(req.params.id);
+        const candidate = await new FindCandidateService()
+            .execute(candidate_id);
 
         return res.status(200).json({
             candidate
