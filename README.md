@@ -12,7 +12,7 @@ graphical management of databases.
 - [ ] Define API routes
 - [ ] Implement first using Active Record Pattern (TypeORM)
  - [ ] Refactor to Data Mapper (Repository) Pattern latter
-- [ ] Implement error handling techniques
+- [X] Implement error handling techniques
 - [ ] Learn and implement migrations
 - [ ] Unitary tests
 - [ ] Separation of Functional Requirements in Modules
@@ -21,9 +21,9 @@ graphical management of databases.
 
 - [ ] Candidates Module
  - [-] POST /cadidates - Creates one candidate. Should not be possible to candidates have same e-mail adress.
- - [ ] GET /candidates/{id} - Get candidate by id
+ - [X] GET /candidates/{id} - Get candidate by id
  - [ ] PUT /candidates/{id} - Update candidate by id
- - [ ] DELETE /candidates/{id} - Delete candidate by id
+ - [X] DELETE /candidates/{id} - Delete candidate by id
  - [ ] Registration and Login with JWT Authentication
  - [X] GET /candidates/{id}/jobs/{id} - Apply to a job. One candidate shouldn't apply more than one time to the same job.
 

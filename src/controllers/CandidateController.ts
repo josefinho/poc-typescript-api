@@ -1,8 +1,8 @@
 import {Request, Response} from 'express';
 import { CreateCandidateService } from '../services/CreateCandidateService';
 import { ApplyToAJobService } from '../services/ApplyToAJobService'
-import { ApiError } from '../libs/ApiError';
 import { FindCandidateService } from '../services/FindCandidateService';
+import { DeleteCandidateService } from '../services/DeleteCandidateService';
 
 class CandidateController {
     public async createCandidate(req: Request, res: Response) {
@@ -32,6 +32,15 @@ class CandidateController {
             .execute({candidate_id, job_id});
         
         return res.sendStatus(201);
+    }
+
+    public async deleteOne(req: Request, res: Response) {
+        const id = Number(req.params.id);
+
+        await new DeleteCandidateService()
+            .execute(id);
+            
+        return res.sendStatus(200);
     }
 }
 
