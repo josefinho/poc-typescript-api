@@ -1,4 +1,5 @@
 import {Request, Response} from 'express';
+import {hash} from 'bcryptjs'
 import { CreateCandidateService } from '../services/CreateCandidateService';
 import { ApplyToAJobService } from '../services/ApplyToAJobService'
 import { FindCandidateService } from '../services/FindCandidateService';
@@ -6,10 +7,11 @@ import { DeleteCandidateService } from '../services/DeleteCandidateService';
 
 class CandidateController {
     public async createCandidate(req: Request, res: Response) {
-        const {name, bio, email, phone, open_to_work} = req.body;
+        const {name, bio, email, phone, open_to_work, password} = req.body;
+        const hashedPassword = await hash(password, 8);
 
         await new CreateCandidateService()
-            .execute({name, bio, email, phone, open_to_work});
+            .execute({ name, bio, email, password: hashedPassword, phone, open_to_work });
 
         return res.sendStatus(201);
     }

@@ -5,16 +5,18 @@ interface IRequest {
     name: string;
     bio: string;
     email: string;
+    password: string;
     phone: string;
     open_to_work: boolean;
 }
 
 class CreateCandidateService {
-    async execute({name, bio, email, phone, open_to_work}: IRequest): Promise<void> {
+    async execute({name, bio, email, password, phone, open_to_work}: IRequest): Promise<void> {
         const newCandidate = Candidate.create({
             name,
             bio,
             email,
+            password,
             phone,
             open_to_work,
         })
