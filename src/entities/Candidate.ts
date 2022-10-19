@@ -16,6 +16,7 @@ class Candidate extends BaseEntity {
     @Column()
     email: string;
 
+
     @Column()
     phone: string;
 

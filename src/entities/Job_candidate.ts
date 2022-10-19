@@ -19,10 +19,10 @@ class Job_candidate extends BaseEntity {
     @Column()
     jobId: number;
 
-    @ManyToOne(() => Candidate, (candidate) => candidate.jobCandidates)
+    @ManyToOne(() => Candidate, (candidate) => candidate.jobCandidates, {onDelete: 'CASCADE'})
     candidate: Candidate;
 
-    @ManyToOne(() => Job, (job) => job.jobCandidates)
+    @ManyToOne(() => Job, (job) => job.jobCandidates, {onDelete: 'CASCADE'})
     job: Job;
 
 }

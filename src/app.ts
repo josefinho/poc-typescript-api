@@ -15,6 +15,8 @@ PostgresDataSource.initialize()
 
     app.use( (error: Error, req: Request, res: Response, next: NextFunction) => {
 
+        console.error(error);
+
         if (error instanceof ApiError) {
             return res.status(error.statusCode).json({
                 statusCode: error.statusCode,
