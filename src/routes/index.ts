@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { candidatesRoute } from "./candidateRoutes";
-import { jobsRoute } from "./jobRoutes"
+import { candidatesRoute } from "../modules/candidates/candidateRoutes";
+import { jobsRoute } from "../modules/jobs/jobRoutes";
 
 const routes = Router();
 

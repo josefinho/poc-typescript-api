@@ -1,7 +1,7 @@
-import { Candidate } from "../entities/Candidate";
-import { Job } from "../entities/Job";
-import { Job_candidate } from "../entities/Job_candidate";
-import { ApiError } from "../libs/ApiError";
+import { Candidate } from "../../../entities/Candidate";
+import { Job } from "../../../entities/Job";
+import { Job_candidate } from "../../../entities/Job_candidate";
+import { ApiError } from "../../../libs/ApiError";
 
 
 interface IRequest {

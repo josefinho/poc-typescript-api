@@ -1,6 +1,6 @@
 import "express-async-errors";
 import { PostgresDataSource } from "./config/data-source";
-import express, { Request, Response, NextFunction } from 'express';
+import express from 'express';
 import { routes } from './routes/index';
 import errorMiddleware from "./middlewares/errorMiddleware";
 

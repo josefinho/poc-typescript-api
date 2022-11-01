@@ -1,10 +1,10 @@
 import {Request, Response} from 'express';
 import {hash} from 'bcryptjs'
-import { CreateCandidateService } from '../services/CreateCandidateService';
-import { ApplyToAJobService } from '../services/ApplyToAJobService'
-import { FindCandidateService } from '../services/FindCandidateService';
-import { DeleteCandidateService } from '../services/DeleteCandidateService';
-import { AuthenticateCandidateService } from '../services/AuthenticateCandidateService'
+import { CreateCandidateService } from './services/CreateCandidateService';
+import { ApplyToAJobService } from './services/ApplyToAJobService';
+import { FindCandidateService } from './services/FindCandidateService';
+import { DeleteCandidateService } from './services/DeleteCandidateService';
+import { AuthenticateCandidateService } from './services/AuthenticateCandidateService'
 
 class CandidateController {
     public async createCandidate(req: Request, res: Response) {

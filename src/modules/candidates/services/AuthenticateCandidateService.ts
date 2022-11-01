@@ -1,16 +1,11 @@
 import jwt from 'jsonwebtoken';
 import { compare } from 'bcryptjs';
-import { Candidate } from '../entities/Candidate';
-import { ApiError } from '../libs/ApiError';
+import { Candidate } from '../../../entities/Candidate';
+import { ApiError } from '../../../libs/ApiError';
 
 interface IRequest {
     email: string;
     password: string;
-}
-
-interface IResponse {
-    candidate: Candidate;
-    token: string;
 }
 
 class AuthenticateCandidateService {

@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { CandidateController } from "../controllers/CandidateController";
-import authenticationMiddleware from '../middlewares/authenticationMiddleware';
+import { CandidateController } from "./CandidateController";
+import authenticationMiddleware from '../../middlewares/authenticationMiddleware';
 
 const candidatesRoute = Router();
 const candidateController = new CandidateController();

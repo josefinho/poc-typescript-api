@@ -1,5 +1,5 @@
-import { Job } from "../entities/Job";
-import { ApiError } from "../libs/ApiError";
+import { Job } from "../../../entities/Job";
+import { ApiError } from "../../../libs/ApiError";
 
 interface IRequest {
     title: string;

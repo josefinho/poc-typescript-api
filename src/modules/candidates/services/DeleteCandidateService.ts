@@ -1,5 +1,5 @@
-import { Candidate } from "../entities/Candidate";
-import { ApiError } from "../libs/ApiError";
+import { Candidate } from "../../../entities/Candidate";
+import { ApiError } from "../../../libs/ApiError";
 
 
 class DeleteCandidateService {
