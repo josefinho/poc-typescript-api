@@ -3,6 +3,7 @@ import { PostgresDataSource } from "./config/data-source";
 import express, { Request, Response, NextFunction } from 'express';
 import { routes } from './routes/index';
 import { ApiError } from "./libs/ApiError";
+import { verify } from "jsonwebtoken";
 
 
 PostgresDataSource.initialize()
@@ -11,8 +12,25 @@ PostgresDataSource.initialize()
     const app = express();
 
     app.use(express.json());
-    app.use('/', routes);
 
+    app.use((req: Request, res: Response, next: NextFunction) => {
+        const token = req.headers.authorization?.split(' ')[1];
+
+        if(!token) 
+            throw new ApiError("JWT Token is missing.", 401);
+
+        try {
+            verify(token, 'supersecretprivatekey');
+        } catch {
+            throw new ApiError('JWT Token is invalid.', 401)
+        }
+
+        console.log(token);
+
+        return next();
+    })
+
+    app.use('/', routes);
     app.use( (error: Error, req: Request, res: Response, next: NextFunction) => {
 
         console.error(error);
