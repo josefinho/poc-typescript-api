@@ -4,19 +4,6 @@ typescript. For this project, I'm going to use **Docker** with a PostreSQL image
 graphical management of databases.
 
 
-### Specs
-
-#### Planning:
-
-- [X] Define ER model
-- [ ] Define API routes
-- [ ] Implement first using Active Record Pattern (TypeORM)
- - [ ] Refactor to Data Mapper (Repository) Pattern latter
-- [X] Implement error handling techniques
-- [ ] Learn and implement migrations
-- [ ] Unitary tests
-- [ ] Separation of Functional Requirements in Modules
-
 #### Functional Requirements
 
 - [ ] Candidates Module
@@ -39,12 +26,6 @@ graphical management of databases.
 
 **BR 1:** On jobs creation, each one must be associated to an already registered company.
 
-- [ ] job_candidates CRUD
- - [ ] POST
- - [ ] GET
- - [ ] PUT
- - [ ] DELETE
- 
 - [ ] Companies CRUD
  - [ ] POST
  - [ ] GET
